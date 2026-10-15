@@ -33,6 +33,6 @@ USER reservas
 EXPOSE 8500
 
 HEALTHCHECK --interval=10s --timeout=3s --start-period=20s --retries=3 \
-  CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8500/estado')" || exit 1
+  CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8080/estado')" || exit 1
 
-CMD ["uvicorn", "reservas.api:app", "--host", "0.0.0.0", "--port", "8500"]
+CMD ["uvicorn", "reservas.api:app", "--host", "0.0.0.0", "--port", "8080"]
